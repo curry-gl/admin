@@ -11,7 +11,7 @@ export default{
     },
     actions: {
         async findAllbusiness({commit}){
-            let response=await request.get('http://172.16.22.195:8989/Business/selectAll')
+            let response=await request.get('/Business/selectAll')
             commit('resetBusinesses',response.data)
         }
     }

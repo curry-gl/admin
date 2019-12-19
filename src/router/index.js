@@ -117,6 +117,26 @@ export const asyncRoutes = [
       }
     ]
   },
+  {
+    path: '/invite',
+    component: Layout,
+    redirect: '/profile/invite',
+    meta: { title: '招聘管理', icon: 'user', noCache: true },
+    children: [
+      {
+        path: 'inviteing',
+        component: () => import('@/pages/invite/inviteing'),
+        name: 'inviteing',
+        meta: { title: '招聘中' },
+      },
+      {
+        path: 'inviteend',
+        component: () => import('@/pages/invite/inviteend'),
+        name: 'inviteend',
+        meta: { title: '招聘完结' },
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
